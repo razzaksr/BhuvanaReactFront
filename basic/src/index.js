@@ -8,13 +8,13 @@ import { Styling } from './mycsscomponent';
 ReactDOM.render(
   <>
     <App/>
-    {/* <ul>
+    <ul>
       <li>hello</li>
       <li>react</li>
     </ul>
     <Zealous/>
     <TechCorp/>
-    <Styling/> */}
+    <Styling/>
   </>,
   document.getElementById('root')
 );
