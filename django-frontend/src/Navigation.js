@@ -12,7 +12,7 @@ export const Menu=()=>{
                     <Navbar.Collapse id="corporate-crud">
                     <Nav className="ms-auto">
                         <Nav.Link active href="/">Home</Nav.Link>
-                        <Nav.Link href="/one">One</Nav.Link>
+                        <Nav.Link href="/new">Agreement</Nav.Link>
                         <Nav.Link href="/two">Two</Nav.Link>
                     </Nav>
                     </Navbar.Collapse>

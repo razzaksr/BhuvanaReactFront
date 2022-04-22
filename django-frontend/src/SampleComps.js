@@ -22,7 +22,7 @@ export const One=()=>{
         </>
     )
 }
-export const Home=()=>{
+export const Homes=()=>{
     return(
         <>
             <h1>Home</h1>

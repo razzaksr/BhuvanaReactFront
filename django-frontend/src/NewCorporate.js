@@ -8,6 +8,7 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import Button from '@mui/material/Button';
 import SwipeRightAltIcon from '@mui/icons-material/SwipeRightAlt';
 import SwipeLeftAltIcon from '@mui/icons-material/SwipeLeftAlt';
+import { inserting } from "./API";
 
 
 export const NewCorp=()=>{
@@ -28,6 +29,26 @@ export const NewCorp=()=>{
             return{
                 ...mas,
                 [name]:value
+            }
+        })
+    }
+
+    const submitting=async()=>{
+        const res= await inserting(corp)
+        alert(JSON.stringify(res.data))
+        reset()
+    }
+
+    const reset=()=>{
+        setCorp(()=>{
+            return{
+                "org":"",
+                "nature":"Select Any Nature",
+                "place":"",
+                "opennings":"",
+                "basic":0.0,
+                "ratings":0.0,
+                "employees":0
             }
         })
     }
@@ -114,24 +135,10 @@ export const NewCorp=()=>{
                             className="mb-3 form-control"
                         />
                         <div className="row justify-content-around">
-                            <Button className="col-3" variant="outlined" color="primary" onClick={()=>{
-                                alert(JSON.stringify(corp))
-                            }}>
+                            <Button className="col-3" variant="outlined" color="primary" onClick={submitting}>
                                 <SwipeRightAltIcon/>
                             </Button>
-                            <Button className="col-3" variant="outlined" color="error" onClick={()=>{
-                                setCorp(()=>{
-                                    return{
-                                        "org":"",
-                                        "nature":"Select Any Nature",
-                                        "place":"",
-                                        "opennings":"",
-                                        "basic":0.0,
-                                        "ratings":0.0,
-                                        "employees":0
-                                    }
-                                })
-                            }}>
+                            <Button className="col-3" variant="outlined" color="error" onClick={reset}>
                                 <SwipeLeftAltIcon/>
                             </Button>
                         </div>
