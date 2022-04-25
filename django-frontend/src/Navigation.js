@@ -11,9 +11,12 @@ export const Menu=()=>{
                     <Navbar.Toggle aria-controls="corporate-crud" />
                     <Navbar.Collapse id="corporate-crud">
                     <Nav className="ms-auto">
-                        <Nav.Link active href="/">Home</Nav.Link>
-                        <Nav.Link href="/new">Agreement</Nav.Link>
-                        <Nav.Link href="/two">Two</Nav.Link>
+                        <Nav.Link active href="/">
+                            <span className='text-danger'>Home</span>
+                        </Nav.Link>
+                        <Nav.Link href="/new">
+                            <span className='text-danger'>Agreement</span>
+                        </Nav.Link>
                     </Nav>
                     </Navbar.Collapse>
                 </Container>

@@ -5,6 +5,7 @@ import { Homes, One, Two } from "./SampleComps";
 import { NewCorp } from "./NewCorporate";
 import { Home } from "./Home";
 import { Read } from "./Read";
+import { Edit } from "./Edit";
 
 
 const App=()=>{
@@ -16,6 +17,7 @@ const App=()=>{
           <Route path="/" exact element={<Home/>}/>
           <Route path="/new" exact element={<NewCorp/>}/>
           <Route path="/kind/:id" exact element={<Read/>}/>
+          <Route path="/kidding/:id" exact element={<Edit/>}/>
         </Routes>
       </BrowserRouter>
     </>

@@ -3,9 +3,10 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import DeleteSweepIcon from '@mui/icons-material/DeleteSweep';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { findingOne } from './API';
+import { deletingById, findingOne } from './API';
 export const Read=()=>{
     const{id}=useParams()
     const[corp,setCorp]=useState({})
@@ -18,6 +19,12 @@ export const Read=()=>{
     useEffect(()=>{
         callFindOne()
     },[])
+
+    const dele=async()=>{
+        const t = await deletingById(corp.id)
+        alert(JSON.stringify(t.data))
+        window.location.assign("/")
+    }
 
     return(
         <>
@@ -41,8 +48,10 @@ export const Read=()=>{
                         </Typography>
                     </CardContent>
                     <CardActions className='row justify-content-around'>
-                        <Button variant='outlined' className='col-3' size="medium" color='error'>Delete</Button>
-                        <Button variant='outlined' className='col-3' size="medium" color='warning'>Edit</Button>
+                        <Button className='col-3' variant='outlined' color='error' onClick={dele}>
+                            <DeleteSweepIcon/>
+                        </Button>
+                        <a className='col-3 btn btn-outline-warning' href={`/kidding/${corp.id}`}>Edit</a>
                     </CardActions>
                 </Card>
                 </div>
